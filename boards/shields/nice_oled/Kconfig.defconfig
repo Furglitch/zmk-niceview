@@ -143,11 +143,6 @@ config NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_POKEMON
     bool "Enable pokemon animation on peripheral"
     default n
 
-config NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SHAYMIN
-    bool "Enable Shaymin animation on peripheral"
-    default n
-
-
 config NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN
     bool "Enable spaceman animation on peripheral"
     default n
@@ -155,7 +150,6 @@ config NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN
 config NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_MS
     int "Animation length in milliseconds"
     default 10000 if NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_POKEMON
-    default 7200 if NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SHAYMIN
     default 4800 if NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD
     default 4800 if NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN
     default 960 if NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_GEM
