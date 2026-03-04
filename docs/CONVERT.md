@@ -32,12 +32,12 @@ python3 gif-convert.py <input_gif> [options]
 | `--output-dir` | `-o` | string | `boards/shields/nice_oled/assets` | Output directory for generated files |
 | `--width` | `-W` | int | 64 | Target width in pixels |
 | `--height` | `-H` | int | 64 | Target height in pixels |
-| `--threshold` | `-t` | int | 128 | Dithering threshold (0-255) |
-| `--no-preprocess` | - | flag | - | Skip ImageMagick preprocessing |
-| `--crop` | - | string | - | Crop geometry for ImageMagick |
 | `--rotate` | - | int | 90 | Rotation angle in degrees |
 | `--no-rotate` | - | flag | - | Disable rotation |
-| `--center` | - | flag | - | Center image after cropping |
+| `--center` | - | flag | - | Set image gravity to center |
+| `--crop` | - | string | - | Crop geometry for ImageMagick |
+| `--no-preprocess` | - | flag | - | Skip ImageMagick preprocessing |
+| `--threshold` | `-t` | int | 128 | Dithering threshold (0-255) |
 | `--animation-ms` | - | int | 5000 | Animation duration in milliseconds |
 | `--no-register` | - | flag | - | Skip registering in project files |
 
@@ -265,7 +265,7 @@ If you see "ImageMagick 'magick' command not found":
 ### Registration Fails
 If registration cannot find insertion points:
 - Ensure the default animation files exist at the expected paths
-- Check that the shaymin animation entries are present (used as insertion anchors)
+- Check that the animation entries are present (used as insertion anchors)
 - Use `--no-register` and manually add the entries
 
 ### Large Frame Counts

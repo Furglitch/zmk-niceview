@@ -75,7 +75,7 @@ def process_frame(frame, target_width, target_height, threshold=128):
     
     return output
 
-def create_animation_files(input_gif, output_c, output_h, name="shaymin", target_width=48, target_height=48, threshold=128):
+def create_animation_files(input_gif, output_c, output_h, name="new_animation", target_width=48, target_height=48, threshold=128):
     """Create C and H files for animation from GIF."""
     img = Image.open(input_gif)
     frame_count = img.n_frames
@@ -484,21 +484,6 @@ def main():
         help="Target height in pixels (default: 64)"
     )
     parser.add_argument(
-        "-t", "--threshold",
-        type=int,
-        default=128,
-        help="Dithering threshold (0-255, default: 128)"
-    )
-    parser.add_argument(
-        "--no-preprocess",
-        action="store_true",
-        help="Skip ImageMagick preprocessing (useful if GIF is already preprocessed)"
-    )
-    parser.add_argument(
-        "--crop",
-        help="Crop geometry for ImageMagick (e.g., '48x48' or '48x48+16+16')"
-    )
-    parser.add_argument(
         "--rotate",
         type=int,
         default=90,
@@ -512,7 +497,22 @@ def main():
     parser.add_argument(
         "--center",
         action="store_true",
-        help="Center the image after cropping using -gravity center"
+        help="Set image gravity to center"
+    )
+    parser.add_argument(
+        "--crop",
+        help="Crop geometry for ImageMagick (e.g., '48x48' or '48x48+16+16')"
+    )
+    parser.add_argument(
+        "--no-preprocess",
+        action="store_true",
+        help="Skip ImageMagick preprocessing (useful if GIF is already preprocessed)"
+    )
+    parser.add_argument(
+        "-t", "--threshold",
+        type=int,
+        default=128,
+        help="Dithering threshold (0-255, default: 128)"
     )
     parser.add_argument(
         "--animation-ms",
