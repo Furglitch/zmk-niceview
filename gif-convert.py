@@ -484,18 +484,18 @@ def main():
         help="Target height in pixels (default: 64)"
     )
     parser.add_argument(
-        "--rotate",
+        "-r", "--rotate",
         type=int,
         default=90,
         help="Rotation angle in degrees for ImageMagick (default: 90)"
     )
     parser.add_argument(
-        "--no-rotate",
+        "-nr", "--no-rotate",
         action="store_true",
         help="Disable rotation (overrides --rotate)"
     )
     parser.add_argument(
-        "--center",
+        "-c", "--center",
         action="store_true",
         help="Set image gravity to center"
     )
@@ -515,7 +515,7 @@ def main():
         help="Dithering threshold (0-255, default: 128)"
     )
     parser.add_argument(
-        "--animation-ms",
+        "-ms", "--animation-ms",
         type=int,
         default=5000,
         help="Animation duration in milliseconds for Kconfig (default: 5000)"

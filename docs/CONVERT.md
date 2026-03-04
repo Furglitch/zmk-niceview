@@ -32,13 +32,13 @@ python3 gif-convert.py <input_gif> [options]
 | `--output-dir` | `-o` | string | `boards/shields/nice_oled/assets` | Output directory for generated files |
 | `--width` | `-W` | int | 64 | Target width in pixels |
 | `--height` | `-H` | int | 64 | Target height in pixels |
-| `--rotate` | - | int | 90 | Rotation angle in degrees |
-| `--no-rotate` | - | flag | - | Disable rotation |
-| `--center` | - | flag | - | Set image gravity to center |
+| `--rotate` | `-r` | int | 90 | Rotation angle in degrees |
+| `--no-rotate` | `-nr` | flag | - | Disable rotation |
+| `--center` | `-c` | flag | - | Set image gravity to center |
 | `--crop` | - | string | - | Crop geometry for ImageMagick |
 | `--no-preprocess` | - | flag | - | Skip ImageMagick preprocessing |
 | `--threshold` | `-t` | int | 128 | Dithering threshold (0-255) |
-| `--animation-ms` | - | int | 5000 | Animation duration in milliseconds |
+| `--animation-ms` | `-ms` | int | 5000 | Animation duration in milliseconds |
 | `--no-register` | - | flag | - | Skip registering in project files |
 
 ### Examples
