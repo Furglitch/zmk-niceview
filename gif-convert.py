@@ -495,12 +495,12 @@ def main():
         help="Disable rotation (overrides --rotate)"
     )
     parser.add_argument(
-        "-c", "--center",
+        "--center",
         action="store_true",
         help="Set image gravity to center"
     )
     parser.add_argument(
-        "--crop",
+        "-c", "--crop",
         help="Crop geometry for ImageMagick (e.g., '48x48' or '48x48+16+16')"
     )
     parser.add_argument(

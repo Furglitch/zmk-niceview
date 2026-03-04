@@ -34,8 +34,8 @@ python3 gif-convert.py <input_gif> [options]
 | `--height` | `-H` | int | 64 | Target height in pixels |
 | `--rotate` | `-r` | int | 90 | Rotation angle in degrees |
 | `--no-rotate` | `-nr` | flag | - | Disable rotation |
-| `--center` | `-c` | flag | - | Set image gravity to center |
-| `--crop` | - | string | - | Crop geometry for ImageMagick |
+| `--center` | - | flag | - | Set image gravity to center |
+| `--crop` | `-c` | string | - | Crop geometry for ImageMagick |
 | `--no-preprocess` | - | flag | - | Skip ImageMagick preprocessing |
 | `--threshold` | `-t` | int | 128 | Dithering threshold (0-255) |
 | `--animation-ms` | `-ms` | int | 5000 | Animation duration in milliseconds |
