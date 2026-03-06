@@ -238,6 +238,7 @@ config NICE_OLED_WIDGET_WPM_LUNA_ANIMATION_MS
 endif # NICE_OLED_WIDGET_WPM_LUNA }}}
 config NICE_OLED_WIDGET_WPM_BONGO_CAT # {{{
     bool "Enable wpm bongo cat"
+    default n if NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN
     default y
 
 if NICE_OLED_WIDGET_WPM_BONGO_CAT
