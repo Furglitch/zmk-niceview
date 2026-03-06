@@ -28,6 +28,10 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include "profile.h"
 #include "screen.h"
 
+#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATUS_BAR)
+#include "status_bar.h"
+#endif
+
 #ifdef CONFIG_NICE_OLED_WIDGET_RAW_HID
 #include <lvgl.h>
 #include <raw_hid/hid.h>
@@ -859,6 +863,11 @@ static void draw_canvas(lv_obj_t *widget, lv_color_t cbuf[], const struct status
 
     // Draw widgets
     draw_background(canvas);
+
+#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATUS_BAR)
+    /* Compact one-line status bar: signal icon + battery % */
+    draw_status_bar(canvas, state);
+#else
     draw_output_status(canvas, state);
 #if !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_ALL) &&                    \
     !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_ONLY) &&                   \
@@ -871,6 +880,7 @@ static void draw_canvas(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_AND_CENTRAL)
     draw_battery_text(canvas, state);
 #endif
+#endif /* CONFIG_NICE_OLED_WIDGET_STATUS_BAR */
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM)
     draw_wpm_status(canvas, state);

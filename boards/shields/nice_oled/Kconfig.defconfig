@@ -84,6 +84,7 @@ config NICE_OLED_WIDGET_INVERTED
 ### WIDGET ON CENTRAL AND PERIPHERAL START {{{
 config NICE_OLED_WIDGET_OUTPUT_BACKGROUND
     bool "Enable output background on central and peripheral"
+    default n if NICE_OLED_WIDGET_STATUS_BAR
     default n if NICE_OLED_ON
     default y if NICE_EPAPER_ON
     default y if NICE_CUSTOM_ON
@@ -615,6 +616,45 @@ config NICE_OLED_WIDGET_OUTPUT_BT_UNBONDED_CUSTOM_Y
     default 32 if NICE_OLED_ON
     default 0 if NICE_EPAPER_ON
     default 32
+##}}}
+
+## STATUS BAR WIDGET {{{
+config NICE_OLED_WIDGET_STATUS_BAR
+    bool "Enable compact one-line status bar (signal icon + battery %)"
+    default n
+    help
+      Draws a single row containing the connection symbol (USB or BT) and
+      the battery percentage with no SIG / BAT labels.
+      Disable draw_output_status / draw_battery_status in screen.c when
+      using this widget to avoid overlapping content.
+
+if NICE_OLED_WIDGET_STATUS_BAR
+
+config NICE_OLED_WIDGET_STATUS_BAR_ICON_X
+    int "Status bar icon X position"
+    default 0 if NICE_OLED_ON
+    default 0 if NICE_EPAPER_ON
+    default 0
+
+config NICE_OLED_WIDGET_STATUS_BAR_ICON_Y
+    int "Status bar icon Y position"
+    default 32 if NICE_OLED_ON
+    default 0 if NICE_EPAPER_ON
+    default 32
+
+config NICE_OLED_WIDGET_STATUS_BAR_TEXT_X
+    int "Status bar battery text X position"
+    default 16 if NICE_OLED_ON
+    default 24 if NICE_EPAPER_ON
+    default 16
+
+config NICE_OLED_WIDGET_STATUS_BAR_TEXT_Y
+    int "Status bar battery text Y position"
+    default 32 if NICE_OLED_ON
+    default 0 if NICE_EPAPER_ON
+    default 32
+
+endif # NICE_OLED_WIDGET_STATUS_BAR
 ##}}}
 
 ## WPM WIDGET POSITION {{{
