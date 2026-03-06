@@ -75,6 +75,8 @@ if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_OLED_WIDGET_STATUS)
       if(CONFIG_NICE_OLED_WIDGET_RESPONSIVE)
         # target_sources_ifdef(CONFIG_NICE_OLED_WIDGET_RESPONSIVE_BONGO_CAT app PRIVATE assets/responsive_bongo_cat_images.c)
         target_sources_ifdef(CONFIG_NICE_OLED_WIDGET_RESPONSIVE_BONGO_CAT app PRIVATE widgets/responsive_bongo_cat.c)
+        target_sources_ifdef(CONFIG_NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN app PRIVATE assets/shaymin_pet.c)
+        target_sources_ifdef(CONFIG_NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN app PRIVATE widgets/responsive_shaymin.c)
       endif()
 
       if(CONFIG_NICE_OLED_WIDGET_LAYER)

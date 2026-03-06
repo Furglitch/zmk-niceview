@@ -273,6 +273,16 @@ if NICE_OLED_WIDGET_RESPONSIVE_BONGO_CAT
 # TODO:
 
 endif # NICE_OLED_WIDGET_RESPONSIVE_BONGO_CAT }}}
+
+config NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN # {{{
+    bool "Enable widget responsive shaymin"
+    default n
+
+if NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN
+
+# TODO:
+
+endif # NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN }}}
 endif
 
 ##}}}
@@ -863,6 +873,20 @@ config NICE_OLED_WIDGET_RESPONSIVE_BONGO_CAT_CUSTOM_Y
     default -9 if NICE_OLED_ON
     default -9 if NICE_EPAPER_ON
     default -9
+##}}}
+
+## RESPONSIVE SHAYMIN WIDGET POSITION {{{
+config NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN_CUSTOM_X
+    int "Responsive shaymin widget X position"
+    default 64 if NICE_OLED_ON
+    default 64 if NICE_EPAPER_ON
+    default 64
+
+config NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN_CUSTOM_Y
+    int "Responsive shaymin widget Y position"
+    default 0 if NICE_OLED_ON
+    default 0 if NICE_EPAPER_ON
+    default 0
 ##}}}
 
 ## SLEEP STATUS WIDGET POSITION {{{
