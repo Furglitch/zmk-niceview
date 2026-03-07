@@ -55,7 +55,7 @@ static struct wpm_shaymin_state shaymin_get_state(const zmk_event_t *eh) {
     if (ev == NULL) {
         state.wpm = 0;
     } else {
-        state.wpm = ev->wpm;
+        state.wpm = ev->state;
     }
     return state;
 }
