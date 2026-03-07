@@ -1167,7 +1167,7 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN)
     zmk_widget_responsive_shaymin_init(&responsive_shaymin_widget, canvas);
     lv_obj_align(zmk_widget_responsive_shaymin_obj(&responsive_shaymin_widget),
-                 LV_ALIGN_TOP_MID, 0, CONFIG_NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN_CUSTOM_Y);
+                 LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN_CUSTOM_Y);
 #endif
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_HID_INDICATORS)

@@ -112,10 +112,14 @@ ZMK_SUBSCRIPTION(widget_responsive_shaymin, zmk_wpm_state_changed);
 
 int zmk_widget_responsive_shaymin_init(struct zmk_widget_responsive_shaymin *widget,
                                        lv_obj_t *parent) {
-    widget->obj = lv_img_create(parent);
+    widget->obj = lv_animimg_create(parent);
+    lv_obj_center(widget->obj);
 
-    // Set initial image
-    lv_img_set_src(widget->obj, shaymin_pet_images[0]);
+    // Set the animation source and duration
+    lv_animimg_set_src(widget->obj, SRC(shaymin_pet_images));
+    lv_animimg_set_duration(widget->obj, ANIMATION_SPEED_IDLE);
+    lv_animimg_set_repeat_count(widget->obj, LV_ANIM_REPEAT_INFINITE);
+    lv_animimg_start(widget->obj);
 
     current_anim_state = anim_state_idle;
 

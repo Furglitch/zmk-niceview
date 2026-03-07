@@ -307,7 +307,9 @@ void draw_wpm_status(lv_obj_t *canvas, const struct status_state *state) {
     draw_gauge(canvas, state);
     draw_needle(canvas, state);
 #endif
-#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_RAW_HID) || !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_GRAPH)
+#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_RAW_HID) ||                                                 \
+    IS_ENABLED(CONFIG_NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN) ||                                      \
+    !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_GRAPH)
 #else  // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_RAW_HID) ||
        // !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_GRAPH)
     draw_grid(canvas);
@@ -327,6 +329,7 @@ void draw_wpm_status(lv_obj_t *canvas, const struct status_state *state) {
 #endif // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_SPEEDOMETER)
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_LUNA) ||                                                \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_BONGO_CAT) ||                                           \
+    IS_ENABLED(CONFIG_NICE_OLED_WIDGET_RESPONSIVE_SHAYMIN) ||                                      \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED) ||                              \
     !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_GRAPH)
 #else
