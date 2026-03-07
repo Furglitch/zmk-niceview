@@ -223,6 +223,16 @@ const lv_img_dsc_t *shaymin_imgs[] = {
     &shaymin_49, &shaymin_50, &shaymin_51, &shaymin_52, &shaymin_53, &shaymin_54, &shaymin_55,
     &shaymin_56, &shaymin_57, &shaymin_58, &shaymin_59
 };
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SHAYMIN_PET)
+LV_IMG_DECLARE(shaymin_pet_00);
+LV_IMG_DECLARE(shaymin_pet_01);
+LV_IMG_DECLARE(shaymin_pet_02);
+LV_IMG_DECLARE(shaymin_pet_03);
+
+const lv_img_dsc_t *shaymin_pet_imgs[] = {
+    &shaymin_pet_00, &shaymin_pet_01, &shaymin_pet_02, &shaymin_pet_03
+};
+
 #else
 #endif
 #else // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
@@ -258,6 +268,8 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     lv_animimg_set_src(art, (const void **)cat_imgs, 8);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN)
     lv_animimg_set_src(art, (const void **)spaceman_imgs, 20);
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SHAYMIN_PET)
+    lv_animimg_set_src(art, (const void **)shaymin_pet_imgs, 4);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_POKEMON)
     lv_animimg_set_src(art, (const void **)pokemon_imgs, 48);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SHAYMIN)
