@@ -62,8 +62,8 @@ def process_frame(frame, target_width, target_height, threshold=128):
     # Apply Atkinson dithering
     dithered = atkinson_dither(gray, threshold)
     
-    # Create output image (black background)
-    output = Image.new('1', (target_width, target_height), 0)
+    # Create output image with black background
+    output = Image.new('1', (target_width, target_height), 1)
     
     # Invert so white pixels become 1 (black on epaper) and black become 0 (white on epaper)
     inverted = ImageOps.invert(dithered)
@@ -214,14 +214,14 @@ def preprocess_gif_with_imagemagick(input_gif, output_gif, crop=None, rotate=Non
         # Add rotation if specified
         if rotate is not None:
             cmd.extend(["-rotate", str(rotate)])
-        
+
         # Convert to grayscale
         cmd.extend(["-colorspace", "Gray"])
-        
+
         # Add gravity center BEFORE crop if center is requested
         if center:
             cmd.extend(["-gravity", "center"])
-        
+
         # Add crop if specified (must come after gravity for centering to work)
         if crop:
             # If crop doesn't include offset, add +0+0
@@ -230,9 +230,9 @@ def preprocess_gif_with_imagemagick(input_gif, output_gif, crop=None, rotate=Non
             else:
                 cmd.extend(["-crop", crop])
             cmd.append("+repage")
-        
+
         cmd.append(output_gif)
-        
+
         subprocess.run(cmd, check=True, capture_output=True, text=True)
         return True
     except subprocess.CalledProcessError as e:
@@ -474,14 +474,14 @@ def main():
     parser.add_argument(
         "-W", "--width",
         type=int,
-        default=64,
-        help="Target width in pixels (default: 64)"
+        default=68,
+        help="Target width in pixels (default: 68)"
     )
     parser.add_argument(
         "-H", "--height",
         type=int,
-        default=64,
-        help="Target height in pixels (default: 64)"
+        default=68,
+        help="Target height in pixels (default: 68)"
     )
     parser.add_argument(
         "-r", "--rotate",
