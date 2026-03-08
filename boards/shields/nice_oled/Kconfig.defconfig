@@ -247,6 +247,17 @@ config NICE_OLED_WIDGET_WPM_BONGO_CAT_ANIMATION_MS
     default 300
 
 endif # NICE_OLED_WIDGET_WPM_BONGO_CAT }}}
+config NICE_OLED_WIDGET_WPM_SHAYMIN # {{{
+    bool "Enable wpm shaymin pet"
+    default n
+
+if NICE_OLED_WIDGET_WPM_SHAYMIN
+
+config NICE_OLED_WIDGET_WPM_SHAYMIN_ANIMATION_MS
+    int "Shaymin Animation in ms for WPM Widget"
+    default 300
+
+endif # NICE_OLED_WIDGET_WPM_SHAYMIN }}}
 endif # NICE_OLED_WIDGET_WPM }}}
 ### NICE_OLED_WIDGET_RESPONSIVE {{{
 config NICE_OLED_WIDGET_RESPONSIVE

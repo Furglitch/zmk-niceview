@@ -11,6 +11,7 @@ LV_IMG_DECLARE(grid);
 #if IS_ENABLED(CONFIG_NICE_EPAPER_ON)
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_LUNA) ||                                                \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_BONGO_CAT) ||                                           \
+    IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_SHAYMIN) ||                                             \
     !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_SPEEDOMETER)
 #else
 static void draw_gauge(lv_obj_t *canvas, const struct status_state *state) {
@@ -216,6 +217,7 @@ static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_LUNA) ||                                                \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_BONGO_CAT) ||                                           \
+    IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_SHAYMIN) ||                                             \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED) ||                              \
     !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_GRAPH)
 #else
@@ -302,6 +304,7 @@ void draw_wpm_status(lv_obj_t *canvas, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_NICE_EPAPER_ON)
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_LUNA) ||                                                \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_BONGO_CAT) ||                                           \
+    IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_SHAYMIN) ||                                             \
     !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_SPEEDOMETER)
 #else
     draw_gauge(canvas, state);
@@ -327,6 +330,7 @@ void draw_wpm_status(lv_obj_t *canvas, const struct status_state *state) {
 #endif // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_SPEEDOMETER)
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_LUNA) ||                                                \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_BONGO_CAT) ||                                           \
+    IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_SHAYMIN) ||                                             \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED) ||                              \
     !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_GRAPH)
 #else
