@@ -223,6 +223,49 @@ const lv_img_dsc_t *shaymin_imgs[] = {
     &shaymin_49, &shaymin_50, &shaymin_51, &shaymin_52, &shaymin_53, &shaymin_54, &shaymin_55,
     &shaymin_56, &shaymin_57, &shaymin_58, &shaymin_59
 };
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_UMBREON)
+LV_IMG_DECLARE(umbreon_00);
+LV_IMG_DECLARE(umbreon_01);
+LV_IMG_DECLARE(umbreon_02);
+LV_IMG_DECLARE(umbreon_03);
+LV_IMG_DECLARE(umbreon_04);
+LV_IMG_DECLARE(umbreon_05);
+LV_IMG_DECLARE(umbreon_06);
+LV_IMG_DECLARE(umbreon_07);
+LV_IMG_DECLARE(umbreon_08);
+LV_IMG_DECLARE(umbreon_09);
+LV_IMG_DECLARE(umbreon_10);
+LV_IMG_DECLARE(umbreon_11);
+LV_IMG_DECLARE(umbreon_12);
+LV_IMG_DECLARE(umbreon_13);
+LV_IMG_DECLARE(umbreon_14);
+LV_IMG_DECLARE(umbreon_15);
+LV_IMG_DECLARE(umbreon_16);
+LV_IMG_DECLARE(umbreon_17);
+LV_IMG_DECLARE(umbreon_18);
+LV_IMG_DECLARE(umbreon_19);
+LV_IMG_DECLARE(umbreon_20);
+LV_IMG_DECLARE(umbreon_21);
+LV_IMG_DECLARE(umbreon_22);
+LV_IMG_DECLARE(umbreon_23);
+LV_IMG_DECLARE(umbreon_24);
+LV_IMG_DECLARE(umbreon_25);
+LV_IMG_DECLARE(umbreon_26);
+LV_IMG_DECLARE(umbreon_27);
+LV_IMG_DECLARE(umbreon_28);
+LV_IMG_DECLARE(umbreon_29);
+LV_IMG_DECLARE(umbreon_30);
+LV_IMG_DECLARE(umbreon_31);
+LV_IMG_DECLARE(umbreon_32);
+
+const lv_img_dsc_t *umbreon_imgs[] = {
+    &umbreon_00, &umbreon_01, &umbreon_02, &umbreon_03, &umbreon_04, &umbreon_05, &umbreon_06,
+    &umbreon_07, &umbreon_08, &umbreon_09, &umbreon_10, &umbreon_11, &umbreon_12, &umbreon_13,
+    &umbreon_14, &umbreon_15, &umbreon_16, &umbreon_17, &umbreon_18, &umbreon_19, &umbreon_20,
+    &umbreon_21, &umbreon_22, &umbreon_23, &umbreon_24, &umbreon_25, &umbreon_26, &umbreon_27,
+    &umbreon_28, &umbreon_29, &umbreon_30, &umbreon_31, &umbreon_32
+};
+
 #else
 #endif
 #else // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
@@ -258,6 +301,8 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     lv_animimg_set_src(art, (const void **)cat_imgs, 8);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN)
     lv_animimg_set_src(art, (const void **)spaceman_imgs, 20);
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_UMBREON)
+    lv_animimg_set_src(art, (const void **)umbreon_imgs, 33);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_POKEMON)
     lv_animimg_set_src(art, (const void **)pokemon_imgs, 48);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SHAYMIN)
